@@ -1,0 +1,361 @@
+{%- liquid
+  assign section_padding = ''
+  if section.settings.section_padding == 'top'
+    assign section_padding = 'pb0'
+  elsif section.settings.section_padding == 'bottom'
+    assign section_padding = 'pt0'
+  elsif section.settings.section_padding == 'none'
+    assign section_padding = 'pt0 pb0'
+  endif
+-%}
+<section
+  class="global__section padding-top {{ section_padding }} promotion__section-{{ section.id }}{% if settings.animation != 'none' %} animate {{ settings.animation }}{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-loaded="false"
+  data-section-type="promotions-section"
+>
+  <div class="row grid__wrapper ">
+    {% liquid
+      assign has_title = false
+      assign has_text = false
+      assign supersize = true
+
+      if section.settings.title != blank
+        assign has_title = true
+      endif
+      if section.settings.text != blank
+        assign has_text = true
+      endif
+    %}
+
+    <div class="promotional__section-block section-{{ section.id }} promotion__section-banner span-12 auto sm-span-12{% if section.settings.animation != 'none' %} animate {{ section.settings.animation }} {% endif %}">
+      <div class="promotional__block-content {{ section.type }} center">
+        {% if has_title %}
+          <h3
+            {% if supersize %}
+              class="supersize"
+            {% endif %}
+          >
+            {{ section.settings.title | escape }}
+          </h3>
+        {% endif %}
+        {% if has_text %}
+          <p class="rte">
+            {{ section.settings.text | escape }}
+          </p>
+        {% endif %}
+      </div>
+
+      <style>
+        .promotional__section-block.section-{{ section.id }} {
+          background: var(--cs3-background);
+        }
+      </style>
+    </div>
+    {% for block in section.blocks %}
+      {% liquid
+        assign grid_width = block.settings.width
+      %}
+      {% liquid
+        assign product = all_products[block.settings.product]
+
+        assign has_button = false
+
+        if block.settings.button != blank and block.settings.product != blank
+          assign has_button = true
+        endif
+
+        assign has_border = false
+        if block.settings.image_border
+          assign has_border = true
+        endif
+      %}
+
+      <div
+        class="promotional__section-block b-{{ block.id }} promotion__section-product {{ grid_width }} auto md-span-12 sm-span-12{% if settings.animation != 'none' %} animate {{ settings.animation }} delay--{{ forloop.index }}{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        <div class="promotional__block-content grid__wrapper edge">
+          <div class="promotional__product-grid {% if product.images.size == 1 %}span-6 {% else %} span-8 {% endif %}md-span-6 sm-span-12 auto">
+            <div class="promotional__product-images grid__wrapper edge{% if has_border %} show-border{% endif %}">
+              <div class="promotional__image--img span-6 auto pci__first">
+                {% if block.settings.image1 != blank %}
+                  <a href="Javascript:;">
+                    {% render 'basic-responsive-image', type: block.settings.image1, width: 500 %}
+                  </a>
+                {% else %}
+                  <div class="onboard">
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="promotional__image--img span-6 auto pci__last">
+                <div class="bundle-plus-icon">+</div>
+                {% if block.settings.image2 != blank %}
+                  <a href="Javascript:;">
+                    {% render 'basic-responsive-image', type: block.settings.image2, width: 500 %}
+                  </a>
+                {% else %}
+                  <div class="onboard">
+                    {{ 'product-2' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <div class="promotional__product-content {% if product.images.size == 1 %}span-6 single__image-promotion {% else %}span-4 {% endif %}md-span-6 auto sm-span-12">
+            <h3 class="h2">
+              {{ product.title | escape }}
+            </h3>
+            <div class="rte">
+              {{ product.description }}
+            </div>
+            <p class="compare-at-price-bundle">{{ product.compare_at_price | money }}</p>
+            <p>{{ product.price | money }}</p>
+            {% if has_button %}
+              <form action="/cart/add" method="post" enctype="multipart/form-data">
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ product.selected_or_first_available_variant.id }}"
+                >
+                <button type="submit" class="button mt10 mb10">{{ block.settings.button | escape }}</button>
+              </form>
+            {% endif %}
+          </div>
+        </div>
+        <style>
+          .promotional__section-block.b-{{ block.id }} {
+            background: var(--{{ block.settings.color_scheme }}-background);
+            border: 1px solid var(--dotted-color);
+          }
+          {% unless block.settings.color_scheme == 'none' %}
+            section.promotion__section-{{ section.id }} .section-title:after {
+              border-color: var(--{{ block.settings.color_scheme }}-color) !important;
+            }
+            .promotional__section-block.b-{{ block.id }} h3,
+            .promotional__section-block.b-{{ block.id }} .rte p {
+              color: var(--{{ block.settings.color_scheme }}-color) !important;
+            }
+          {% endunless %}
+          .promotional__section-block.b-{{ block.id }} .promotional__product-content {
+            align-self: {{ block.settings.align_self }};
+            {% if block.settings.align_self == 'top' %}
+            padding-top: 30px;
+            {% endif %}
+          }
+          .promotional__section-block.b-{{ block.id }} .promotional__block-content {
+            padding-bottom: 30px;
+          }
+
+          .promotional__product-images.show-border .promotional__image--img a .box-ratio {
+            border: 1px solid;
+            {% if block.settings.color_scheme == 'none' %}
+            border-color:var(--text-color);
+            {% else %}
+            border-color:var(--{{ block.settings.color_scheme }}-color);
+            {% endif %}
+            border-radius: 0px;
+          }
+
+          .compare-at-price-bundle {
+            color: red;
+            text-decoration: line-through;
+            line-height: 0px;
+          }
+        </style>
+      </div>
+    {% endfor %}
+  </div>
+
+  <style>
+    section.promotion__section-{{ section.id }} {
+      background: var(--{{ section.settings.color_scheme }}-background);
+    }
+    {% if section.settings.border_blocks %}
+      section.promotion__section-{{ section.id }} .promotional__section-block {
+        border: 1px solid var(--dotted-color);
+      }
+    {% endif %}
+    {% unless section.settings.color_scheme == 'none' %}
+      section.promotion__section-{{ section.id }} .section-title:after {
+        border-color: var(--{{ section.settings.color_scheme }}-color) !important;
+      }
+      section.promotion__section-{{ section.id }} h2,
+      section.promotion__section-{{ section.id }} h3,
+      section.promotion__section-{{ section.id }} .rte p,
+      section.promotion__section-{{ section.id }} .rte a {
+        color: var(--{{ section.settings.color_scheme }}-color) !important;
+      }
+    {% endunless %}
+    .promotional__collection-images .promotional__image--img a,
+    .promotional__collection-images .promotional__image--img .onboard,
+    .promotional__product-images .promotional__image--img a,
+    .promotional__product-images .promotional__image--img .onboard {
+        position: relative;
+    }
+
+    .bundle-plus-icon {
+      position: absolute;
+      z-index: 100;
+      top: 37%;
+      font-size: 65px;
+      font-weight: 900;
+      margin-left: -15px;
+    }
+  </style>
+  <script>
+    function addToCart(variant, product) {
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+        body: JSON.stringify({
+          quantity: 1,
+          id: variant,
+          'product-id': product,
+        }),
+      })
+        .then(function (response) {
+          if (response.ok) {
+            // Handle success, such as displaying a success message or updating the cart preview
+          } else {
+            // Handle error, such as displaying an error message
+          }
+        })
+        .catch(function (error) {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</section>
+{% schema %}
+{
+  "name": "Bundle Package",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Products"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Add a short text block to a wide banner area"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "id": "product",
+          "type": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image 2"
+        },
+        {
+          "type": "checkbox",
+          "id": "image_border",
+          "label": "Add image border",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button text",
+          "default": "Button"
+        },
+        {
+          "type": "select",
+          "id": "align_self",
+          "label": "Align text",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "end",
+              "label": "Bottom"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Block width",
+          "options": [
+            {
+              "value": "span-12",
+              "label": "100%"
+            },
+            {
+              "value": "span-6",
+              "label": "50%"
+            }
+          ],
+          "default": "span-12"
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "cs1",
+              "label": "1"
+            },
+            {
+              "value": "cs2",
+              "label": "2"
+            },
+            {
+              "value": "cs3",
+              "label": "3"
+            }
+          ],
+          "default": "cs2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Package",
+      "blocks": [
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["404", "article", "index", "page", "product"]
+  }
+}
+{% endschema %}
