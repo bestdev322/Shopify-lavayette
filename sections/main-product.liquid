@@ -123,6 +123,14 @@
               </div><!-- /.product-blocks__block -->
               <div class="clear"></div>
 
+            {% when 'payment_icons' %}
+              <div
+                class="product-blocks__block product-blocks__block--{{ block.type }}"
+                {{ block.shopify_attributes }}>
+                {% render 'payment-icons', block: block %}
+              </div><!-- /.product-blocks__block -->
+              <div class="clear"></div>
+
             {% when 'pickup_availability' %}
               <div
                 class="product-blocks__block product-blocks__block--{{ block.type }}"
@@ -931,6 +939,97 @@
       "settings": []
     },
     {
+      "type": "payment_icons",
+      "name": "Payment icons",
+      "limit": 1,
+      "settings":
+      [
+        {
+          "type": "text",
+          "id": "payment_description",
+          "label": "Description",
+          "default": "Description"
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "default": "left",
+          "options":
+          [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_ideal",
+          "label": "Show Ideal",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_maestro",
+          "label": "Show Maestro",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_paypal",
+          "label": "Show PayPal",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_apple_pay",
+          "label": "Show Apple Pay",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_visa",
+          "label": "Show Visa",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_master",
+          "label": "Show Mastercard",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_american_express",
+          "label": "Show American Express",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_google_pay",
+          "label": "Show Google Pay",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_shopify_pay",
+          "label": "Show Shop Pay",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_unionpay",
+          "label": "Show Union Pay",
+          "default": true
+        }
+      ]
+    },
+    {
       "type": "buttons",
       "name": "Buttons",
       "limit": 1,
@@ -998,6 +1097,10 @@
             {
               "label": "Bag",
               "value": "bag"
+            },
+            {
+              "label": "Bottle",
+              "value": "bottle"
             },
             {
               "label": "Burger",

@@ -344,14 +344,18 @@
                 bottom: 0;
                 left: -5px;
                 z-index: 2;
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+              }
+
+              .promotional__product-images.show-border .promotional__image--img a .box-ratio {
                 border: 1px solid;
                 {% if block.settings.color_scheme == 'none' %}
                 border-color:var(--text-color);
                 {% else %}
                 border-color:var(--{{ block.settings.color_scheme }}-color);
                 {% endif %}
-                width: calc(100% - 4px);
-                height: calc(100% - 4px);
+                border-radius: 0px;
               }
             </style>
           </div>

@@ -1,0 +1,306 @@
+{%- liquid
+  assign section_padding = ''
+  if section.settings.section_padding == 'top'
+    assign section_padding = 'pb0'
+  elsif section.settings.section_padding == 'bottom'
+    assign section_padding = 'pt0'
+  elsif section.settings.section_padding == 'none'
+    assign section_padding = 'pt0 pb0'
+  endif
+
+  assign full_width = false
+  if section.settings.full_width
+    assign full_width = true
+  endif
+
+  assign has_video = false
+  assign has_button = false
+  assign has_heading = true
+  assign has_subheading = false
+  assign button_is_link = false
+  assign video_is_link = false
+
+  assign video_url = section.settings.video_url
+  assign heading = section.settings.heading | escape
+  assign subheading = section.settings.subheading
+  assign button_text = section.settings.button_text | escape
+  assign link = section.settings.link
+  assign desktop_width = section.settings.desktop_width
+
+  if link != blank and button_text != blank
+    assign has_button = true
+    assign button_is_link = true
+  endif
+
+  if link != blank and button_text == blank
+    assign video_is_link = true
+  endif
+
+  if video_url != blank
+    assign has_video = true
+  endif
+
+  if heading == blank and subheading == blank and button_text == blank
+    assign hide_caption = true
+  endif
+
+
+  if heading != blank
+    assign has_heading = true
+  endif
+
+  if subheading != blank
+    assign has_subheading = true
+  endif
+-%}
+
+{% style %}
+  .global__section-{{ section.id }} .iwt__content--wrapper,
+  .global__section-{{ section.id }} .iwt__image {
+    background: var(--{{ section.settings.color_scheme }}-background);
+  }
+  {% unless section.settings.color_scheme == 'none' %}
+    .global__section-{{ section.id }} .iwt__content--wrapper h2,
+    .global__section-{{ section.id }} .iwt__content--wrapper .rte,
+    .global__section-{{ section.id }} .iwt__content--wrapper .rte p,
+    .global__section-{{ section.id }} .iwt__content--wrapper .rte a {
+      color: var(--{{ section.settings.color_scheme }}-color) !important;
+    }
+  {% endunless %}
+
+  video {
+    border-radius: 10px;
+    width: {{ desktop_width }}px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    video {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<section
+  class="global__section {{ section_padding }} padding-top global__section-{{ section.id }} {% if settings.animation != 'none' %} animate {{ settings.animation }}{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-loaded="false"
+  data-section-type="video-with-text"
+>
+  {% capture video_layout %}
+      <div class="span-6 auto sm-span-12 text-center iwt__image{% if settings.animation != 'none' %} animate {{ settings.animation }} delay--1{% endif %}">
+        {% if has_video == false %}
+          <div class="onboard">
+            
+          </div>
+        {% else %}
+          {% if video_is_link %}<a href="{{ link }}">{% endif %}
+          <video class="" data-testid="video-component" loop playsinline autoplay muted preload="auto">
+            <source type="video/mp4" src="{{video_url}}">
+          </video>
+          {% if video_is_link %}</a>{% endif %}
+        {% endif %}
+      </div>
+    {% endcapture %}
+
+  {% if full_width %}
+    <div class="gridlock-fluid"><div class="row">
+  {% endif %}
+
+  <div class="row">
+    <div class="iwt__content--wrapper {{ section.id }} grid__wrapper{% if full_width %} ml0 mr0{% endif %}">
+      {% if section.settings.layout == 'left' %}
+        {{ video_layout }}
+      {% endif %}
+      <div class="span-6 auto sm-span-12 contained iwt__caption {% if section.settings.text_align == 'center' %} center{% elsif section.settings.text_align == 'right' %} a-right{% endif %}{% if section.settings.m_center %} m-center{% endif %}{% if settings.animation != 'none' %} animate {{ settings.animation }} delay--2{% endif %}">
+        {% if has_heading %}
+          <h2>{{ heading }}</h2>
+        {% endif %}
+        {% if has_subheading %}
+          <div class="rte">{{ subheading }}</div>
+        {% endif %}
+        {% if button_is_link %}
+          <a href="{{ link }}" class="button">
+            {{ button_text }}
+          </a>
+        {% endif %}
+      </div>
+      {% if section.settings.layout == 'right' %}
+        {{ video_layout }}
+      {% endif %}
+    </div>
+  </div>
+
+  {% if full_width %}
+    </div>
+    </div>
+  {% endif %}
+</section>
+{% schema %}
+{
+  "name": "Video with text",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Enable full width",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width",
+      "min": 100,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop fixed width",
+      "default": 300
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Video with text"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Text",
+      "default": "<p>Showcase a single video next to a fixed content area.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button",
+      "default": "Button"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "default": "/"
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Video on left"
+        },
+        {
+          "value": "right",
+          "label": "Video on right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "m_center",
+      "label": "Center text on mobile",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "cs1",
+          "label": "1"
+        },
+        {
+          "value": "cs2",
+          "label": "2"
+        },
+        {
+          "value": "cs3",
+          "label": "3"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "both",
+          "label": "Both"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "both"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video with text"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "list-collections",
+      "index",
+      "page",
+      "product",
+      "search"
+    ]
+  }
+}
+{% endschema %}

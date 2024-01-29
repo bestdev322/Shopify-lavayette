@@ -1,192 +1,363 @@
 {
-    "sections": {
-        "breadcrumbs": {
-            "type": "breadcrumbs",
-            "settings": {}
-        },
-        "main": {
-            "type": "main-product",
-            "blocks": {
-                "0ee0e57a-a514-45ea-8ad6-a320b436c922": {
-                    "type": "title",
-                    "settings": {}
-                },
-                "87e4ce9c-debf-4d27-97f8-ea39dff58b03": {
-                    "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
-                    "settings": {
-                        "use_metafields": false,
-                        "sku_tagtype": "sku",
-                        "is_featured_product": false,
-                        "featured_product_handle": ""
-                    }
-                },
-                "d4bc118c-34ce-411c-8496-6f07985c8b3e": {
-                    "type": "price",
-                    "settings": {}
-                },
-                "4734dabf-5af5-4b76-9077-391427ae4b62": {
-                    "type": "variant_picker",
-                    "settings": {
-                        "show_size_chart": false,
-                        "size_chart_page": "",
-                        "size_chart_label": "Size chart"
-                    }
-                },
-                "ef6b29b9-47fd-46e1-b030-4931fd59a3a2": {
-                    "type": "stock_levels",
-                    "settings": {
-                        "threshold": 4,
-                        "pulse_color": "#ffb042"
-                    }
-                },
-                "85156b73-697c-4bed-86e8-70ed43061d55": {
-                    "type": "quantity",
-                    "settings": {}
-                },
-                "6aeeef44-525f-47e8-b724-9c02c8cde4cc": {
-                    "type": "buttons",
-                    "settings": {
-                        "show_gift_card_recipient": false
-                    }
-                },
-                "84665c35-15c8-4df3-9867-e170861135a5": {
-                    "type": "pickup_availability",
-                    "settings": {}
-                },
-                "efe0d88a-d707-4bb1-add8-cbbb8e054990": {
-                    "type": "description",
-                    "settings": {
-                        "show_as_accordion": true,
-                        "default_open_accordion": true
-                    }
-                },
-                "f7436877-b31b-4bbf-a5cc-3ac173bb25eb": {
-                    "type": "additional_content",
-                    "settings": {
-                        "ac_text": "De wasparfum is ook te combineren met onze duurzame wasstrips en drogerballen.",
-                        "ac_link": "",
-                        "ac_icon": "eco"
-                    }
-                },
-                "accordion_item1": {
-                    "type": "accordion_content",
-                    "settings": {
-                        "accordion_heading": "Gebruiksaanwijzing",
-                        "page": "",
-                        "richtext": "<ul><li>Schenk jouw persoonlijke dosis wasparfum in de frontloader voor de wasverzachter.10Ml Is genoeg voor een grote was (4-8 kilogram).<\/li><li>De Lavayette wasparfums zijn te gebruiken voor wasmachine- en handwas.<br\/>Geschikt voor alle textielsoorten.<\/li><li>Vrij van Parabenen en Nikkel.<strong> <\/strong><em>Let op! <\/em>Schenk geen wasparfum direct op uw kleding of textiel.<\/li><\/ul>",
-                        "default_open_accordion": false
-                    }
-                },
-                "00a761a7-4c6e-4a01-974d-968f6d538c08": {
-                    "type": "accordion_content",
-                    "settings": {
-                        "accordion_heading": "Verzenden en Retourneren",
-                        "page": "",
-                        "richtext": "<p>Niet tevreden met je aankoop? Je kunt je bestelling tot 30 dagen na ontvangst retourneren. Volg de onderstaande stappen om jouw order\/product succesvol te retourneren:<\/p><ol><li>E-mail naar <a href=\"mailto:info@lavayette.nl\">info@lavayette.nl<\/a> om uw retourpakket aan te melden.<\/li><li>Verpak de artikelen die je retourneert.<\/li><li>Druk je retourlabel af. Als je dit nog niet hebt ontvangen, sturen we deze binnenkort naar je op.<\/li><li>Bevestig het label aan het pakket. Bedek of verwijder vorige verzendlabels.<\/li><li>Geef het pakket aan de vervoerder die op het label wordt vermeld.<\/li><\/ol><p>Volg je retourzending via Je trackingnummer om er zeker van te zijn dat we deze hebben ontvangen.<\/p>",
-                        "default_open_accordion": false
-                    }
-                },
-                "0b1ca642-3b30-4a17-a48a-3467485112c5": {
-                    "type": "details",
-                    "settings": {
-                        "show_as_accordion": true,
-                        "pf_show_sku": false,
-                        "pf_show_product_inventory": false,
-                        "pf_show_product_weight": true,
-                        "pf_show_product_type": true,
-                        "pf_show_product_vendor": true,
-                        "pf_show_product_collection": true,
-                        "default_open_accordion": false
-                    }
-                },
-                "a7c78079-7683-4e65-8bc0-55dd7b18bfc7": {
-                    "type": "share",
-                    "settings": {}
-                },
-                "1bf89bd3-5460-457d-a074-387a093ab686": {
-                    "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/single-highlight\/a103faaf-2125-4b0e-89fa-de5149736723",
-                    "settings": {
-                        "review_ids": "",
-                        "product_ids": "",
-                        "category": "",
-                        "product_brand": "",
-                        "tags": ""
-                    }
-                }
-            },
-            "block_order": [
-                "0ee0e57a-a514-45ea-8ad6-a320b436c922",
-                "87e4ce9c-debf-4d27-97f8-ea39dff58b03",
-                "d4bc118c-34ce-411c-8496-6f07985c8b3e",
-                "4734dabf-5af5-4b76-9077-391427ae4b62",
-                "ef6b29b9-47fd-46e1-b030-4931fd59a3a2",
-                "85156b73-697c-4bed-86e8-70ed43061d55",
-                "6aeeef44-525f-47e8-b724-9c02c8cde4cc",
-                "84665c35-15c8-4df3-9867-e170861135a5",
-                "efe0d88a-d707-4bb1-add8-cbbb8e054990",
-                "f7436877-b31b-4bbf-a5cc-3ac173bb25eb",
-                "accordion_item1",
-                "00a761a7-4c6e-4a01-974d-968f6d538c08",
-                "0b1ca642-3b30-4a17-a48a-3467485112c5",
-                "a7c78079-7683-4e65-8bc0-55dd7b18bfc7",
-                "1bf89bd3-5460-457d-a074-387a093ab686"
-            ],
-            "settings": {
-                "pf_show_sticky_cart": true,
-                "show_tax_info": false,
-                "pf_gallery_style": "thumbnails",
-                "thumbnail_position": "left",
-                "full_image_count": 3,
-                "click_to_enlarge": true,
-                "enable_video_looping": false
-            }
-        },
-        "9464c866-87b0-4525-9d35-028a740d6aa7": {
-            "type": "gp-global-section-487250525180396465",
-            "settings": {}
-        },
-        "main-product-content": {
-            "type": "main-product-content",
-            "disabled": true,
-            "settings": {}
-        },
-        "product-recommendations": {
-            "type": "product-recommendations",
-            "settings": {
-                "products_per_row": 4,
-                "products_shown": 4,
-                "product_recommendations_heading": "You may also like",
-                "section_padding": "both"
-            }
-        },
-        "169658063215eeafae": {
-            "type": "apps",
-            "settings": {
-                "full_width": false,
-                "section_padding": "both"
-            }
-        },
-        "4fbe0af2-0b4e-4e11-be86-685c8d88e92c": {
-            "type": "gp-global-section-486989521024451799",
-            "settings": {}
-        },
-        "69f3c94b-597d-49bf-a0e6-88f507cc63cb": {
-            "type": "custom-liquid",
-            "settings": {
-                "liquid": "<script>\nwindow.addEventListener('load', function() {\nvar _learnq = window._learnq || [];\nfunction addedToCart() {\n  fetch(`${window.location.origin}\/cart.js`)\n  .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', cart]);\n        klAjax = false;\n      }\n  }))\n};\n(function (ns, fetch) {\n  ns.fetch = function() {\n    const response = fetch.apply(this, arguments);\n    response.then(res => {\n      if (`${window.location.origin}\/cart\/add.js`\n      \t.includes(res.url)) {\n        \taddedToCart()\n      }\n    });\n    return response\n  }\n}(window, window.fetch));\nvar klAjax = true;\nvar atcButtons = document.querySelectorAll(\"form[action*='\/cart\/add'] button[type='submit']\");\nfor (var i = 0; i < atcButtons.length; i++) {\n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n}\n});\n<\/script>",
-                "full_width": false,
-                "section_padding": "both"
-            }
-        }
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
     },
-    "order": [
-        "breadcrumbs",
-        "main",
-        "9464c866-87b0-4525-9d35-028a740d6aa7",
-        "main-product-content",
-        "product-recommendations",
-        "169658063215eeafae",
-        "4fbe0af2-0b4e-4e11-be86-685c8d88e92c",
-        "69f3c94b-597d-49bf-a0e6-88f507cc63cb"
-    ]
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "0ee0e57a-a514-45ea-8ad6-a320b436c922": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "87e4ce9c-debf-4d27-97f8-ea39dff58b03": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "use_metafields": false,
+            "sku_tagtype": "sku",
+            "is_featured_product": false,
+            "featured_product_handle": ""
+          }
+        },
+        "d4bc118c-34ce-411c-8496-6f07985c8b3e": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "2ca0acf9-acc6-4d9c-a231-956a91147f03": {
+          "type": "additional_content",
+          "settings": {
+            "ac_text": "Gebruik: Effectief en Duurzaam, 1000 Wasjes Lang",
+            "ac_link": "",
+            "ac_icon": "laundry"
+          }
+        },
+        "4734dabf-5af5-4b76-9077-391427ae4b62": {
+          "type": "variant_picker",
+          "settings": {
+            "show_size_chart": false,
+            "size_chart_page": "",
+            "size_chart_label": "Size chart"
+          }
+        },
+        "ef6b29b9-47fd-46e1-b030-4931fd59a3a2": {
+          "type": "stock_levels",
+          "settings": {
+            "threshold": 4,
+            "pulse_color": "#ffb042"
+          }
+        },
+        "85156b73-697c-4bed-86e8-70ed43061d55": {
+          "type": "quantity",
+          "settings": {
+          }
+        },
+        "6aeeef44-525f-47e8-b724-9c02c8cde4cc": {
+          "type": "buttons",
+          "settings": {
+            "show_gift_card_recipient": false
+          }
+        },
+        "84665c35-15c8-4df3-9867-e170861135a5": {
+          "type": "pickup_availability",
+          "settings": {
+          }
+        },
+        "647d8433-07a9-48dc-ae55-23853f427f9b": {
+          "type": "payment_icons",
+          "settings": {
+            "payment_description": "Verzekerd van een VEILIGE transactie",
+            "layout": "left",
+            "show_ideal": true,
+            "show_maestro": true,
+            "show_paypal": true,
+            "show_apple_pay": true,
+            "show_visa": true,
+            "show_master": false,
+            "show_american_express": false,
+            "show_google_pay": false,
+            "show_shopify_pay": false,
+            "show_unionpay": false
+          }
+        },
+        "efe0d88a-d707-4bb1-add8-cbbb8e054990": {
+          "type": "description",
+          "settings": {
+            "show_as_accordion": true,
+            "default_open_accordion": true
+          }
+        },
+        "00a761a7-4c6e-4a01-974d-968f6d538c08": {
+          "type": "accordion_content",
+          "settings": {
+            "accordion_heading": "Verzenden en Retourneren",
+            "page": "",
+            "richtext": "<p><strong>Supersnelle Verzending:<\/strong><\/p><p>Bij Lavayette verzenden we jouw bestelling dezelfde dag als je voor 23:59 bestelt. Zo heb je jouw nieuwe aankoop de volgende dag al in huis. Wij kiezen zorgvuldig tussen PostNL en DHL voor de beste bezorging.<\/p><p>De verzendkosten bedragen:<br\/>€ 4,95 voor bestellingen onder de € 40,-<br\/>Gratis voor bestellingen vanaf € 40,-<\/p><p><strong>Altijd Op de Hoogte:<\/strong><\/p><p>Volg je pakket moeiteloos met onze handige track en trace-link, die je per e-mail ontvangt. We houden je regelmatig op de hoogte van de voortgang, zodat je precies weet wanneer je jouw bestelling kunt verwachten.<\/p><p>We streven ernaar jouw shopervaring vlekkeloos te maken. Snelle verzending, duidelijke updates - omdat jouw gemak onze prioriteit is.<\/p><p><strong>Eenvoudig en Gratis Retourneren voor Jouw Tevredenheid:<\/strong><\/p><p>Niet helemaal tevreden met je aankoop? Geen probleem! Je kunt jouw bestelling tot 30 dagen na ontvangst gratis retourneren. Volg eenvoudig onderstaande stappen voor een vlotte retourprocedure:<\/p><p>1. Stuur een e-mail naar info@lavayette.nl om jouw retourpakket aan te melden.<\/p><p>2. Verpak de artikelen die je wilt retourneren zorgvuldig.<\/p><p>3. Druk je retourlabel af. Nog geen label ontvangen? Geen zorgen, deze sturen we binnenkort naar je toe.<\/p><p>4. Bevestig het label op het pakket en zorg ervoor dat eventuele vorige verzendlabels zijn bedekt of verwijderd.<\/p><p>5. Geef het pakket af bij de vervoerder die op het label wordt vermeld.<\/p><p>6. Volg je retourzending met behulp van je trackingnummer om zeker te zijn dat we deze hebben ontvangen.<\/p><p>Bij Lavayette willen we dat je volledig tevreden bent met je aankoop. Onze retourprocedure is niet alleen eenvoudig, maar ook helemaal gratis, zodat jij met een gerust hart kunt winkelen.<\/p>",
+            "default_open_accordion": false
+          }
+        },
+        "0b1ca642-3b30-4a17-a48a-3467485112c5": {
+          "type": "details",
+          "settings": {
+            "show_as_accordion": true,
+            "pf_show_sku": false,
+            "pf_show_product_inventory": false,
+            "pf_show_product_weight": true,
+            "pf_show_product_type": true,
+            "pf_show_product_vendor": true,
+            "pf_show_product_collection": true,
+            "default_open_accordion": false
+          }
+        },
+        "372ee61d-7743-4684-aedb-fe0c5dcb3e19": {
+          "type": "accordion_content",
+          "disabled": true,
+          "settings": {
+            "accordion_heading": "Geur",
+            "page": "",
+            "richtext": "{{ product.metafields.custom.scent | metafield_tag }}",
+            "default_open_accordion": false
+          }
+        },
+        "a7c78079-7683-4e65-8bc0-55dd7b18bfc7": {
+          "type": "share",
+          "settings": {
+          }
+        },
+        "1bf89bd3-5460-457d-a074-387a093ab686": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/single-highlight\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "review_ids": "",
+            "product_ids": "",
+            "category": "",
+            "product_brand": "",
+            "tags": ""
+          }
+        }
+      },
+      "block_order": [
+        "0ee0e57a-a514-45ea-8ad6-a320b436c922",
+        "87e4ce9c-debf-4d27-97f8-ea39dff58b03",
+        "d4bc118c-34ce-411c-8496-6f07985c8b3e",
+        "2ca0acf9-acc6-4d9c-a231-956a91147f03",
+        "4734dabf-5af5-4b76-9077-391427ae4b62",
+        "ef6b29b9-47fd-46e1-b030-4931fd59a3a2",
+        "85156b73-697c-4bed-86e8-70ed43061d55",
+        "6aeeef44-525f-47e8-b724-9c02c8cde4cc",
+        "84665c35-15c8-4df3-9867-e170861135a5",
+        "647d8433-07a9-48dc-ae55-23853f427f9b",
+        "efe0d88a-d707-4bb1-add8-cbbb8e054990",
+        "00a761a7-4c6e-4a01-974d-968f6d538c08",
+        "0b1ca642-3b30-4a17-a48a-3467485112c5",
+        "372ee61d-7743-4684-aedb-fe0c5dcb3e19",
+        "a7c78079-7683-4e65-8bc0-55dd7b18bfc7",
+        "1bf89bd3-5460-457d-a074-387a093ab686"
+      ],
+      "settings": {
+        "pf_show_sticky_cart": true,
+        "show_tax_info": false,
+        "pf_gallery_style": "thumbnails",
+        "thumbnail_position": "left",
+        "full_image_count": 3,
+        "click_to_enlarge": true,
+        "enable_video_looping": false
+      }
+    },
+    "9464c866-87b0-4525-9d35-028a740d6aa7": {
+      "type": "gp-global-section-487250525180396465",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "main-product-content": {
+      "type": "main-product-content",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "169658063215eeafae": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "section_padding": "both"
+      }
+    },
+    "69f3c94b-597d-49bf-a0e6-88f507cc63cb": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "liquid": "<script>\nwindow.addEventListener('load', function() {\nvar _learnq = window._learnq || [];\nfunction addedToCart() {\n  fetch(`${window.location.origin}\/cart.js`)\n  .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', cart]);\n        klAjax = false;\n      }\n  }))\n};\n(function (ns, fetch) {\n  ns.fetch = function() {\n    const response = fetch.apply(this, arguments);\n    response.then(res => {\n      if (`${window.location.origin}\/cart\/add.js`\n      \t.includes(res.url)) {\n        \taddedToCart()\n      }\n    });\n    return response\n  }\n}(window, window.fetch));\nvar klAjax = true;\nvar atcButtons = document.querySelectorAll(\"form[action*='\/cart\/add'] button[type='submit']\");\nfor (var i = 0; i < atcButtons.length; i++) {\n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n}\n});\n<\/script>",
+        "full_width": false,
+        "section_padding": "both"
+      }
+    },
+    "30a75a32-408b-466f-bed6-933caa2ba864": {
+      "type": "image-with-text",
+      "settings": {
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/Listing_Drogerballen_2023-Bol1_011_05.jpg",
+        "slideshow_size": "natural",
+        "desktop_height": 900,
+        "mobile_height": 600,
+        "heading": "Duurzame Drogerballen",
+        "subheading": "<p>Met de duurzame drogerballen bespaar je tijd én energie en ben je altijd verzekerd van een zijdezachte was!<\/p><p><strong>Pluspunten<\/strong><\/p><ul><li>100% milieu- en diervriendelijk<\/li><li>Verkort droogtijd tot 42%<\/li><li>Duurzaam Nieuw-Zeelandse schapenwol <\/li><li>Herbruikbaar<\/li><li>Zachte en kreukvrije kleding<\/li><\/ul>",
+        "button_text": "",
+        "link": "",
+        "layout": "left",
+        "text_align": "left",
+        "m_center": false,
+        "color_scheme": "none",
+        "section_padding": "both"
+      }
+    },
+    "d9363df0-9127-4827-9415-6c8d6c26c4dd": {
+      "type": "video-with-text",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "full_width": false,
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e8d957ebb39941bba699b7a541aeac93.mp4",
+        "desktop_width": 480,
+        "heading": "Gebruiksaanwijzing",
+        "subheading": "<ul><li><strong>Bepaal het Aantal Drogerballen: <\/strong>Gebruik 3 drogerballen voor een kleine was en 6 voor een grote.<\/li><\/ul><p><\/p><ul><li><strong>Plaats de Droogballen: <\/strong>Doe de wasgoed in de trommel van je droger en verdeel de drogerballen gelijkmatig.<\/li><\/ul><p><\/p><ul><li><strong>Optioneel - Voeg Geur Toe: <\/strong>Breng een persoonlijk tintje aan de was door enkele druppels wasparfum op de drogerballen te sprenkelen.<\/li><\/ul><p><\/p><ul><li><strong>Start de Droger: <\/strong>Stel het gewenste droogprogramma in op je droger. Laat de droger zijn werk doen en zie hoe de drogerballen zorgen voor een 'losse' textuur van je wasgoed.<\/li><\/ul><p><\/p><ul><li><strong>Geniet van de Frisheid: <\/strong>Haal je kleding uit de droger en geniet van het resultaat – heerlijk zachte en fris ruikende was.<\/li><\/ul><p>Tip: Herhaal deze stappen bij elke droogcyclus voor optimale prestaties en een langdurige frisheid van je wasgoed.<\/p>",
+        "button_text": "",
+        "link": "",
+        "layout": "right",
+        "text_align": "left",
+        "m_center": false,
+        "color_scheme": "none",
+        "section_padding": "both"
+      }
+    },
+    "c09ce69e-4fef-4ad6-88bf-7fb07d50181c": {
+      "type": "image-with-text",
+      "settings": {
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/Listing_Drogerballen_2023-Bol1_011_09.jpg",
+        "slideshow_size": "natural",
+        "desktop_height": 900,
+        "mobile_height": 600,
+        "heading": "Duurzaam Materiaal",
+        "subheading": "<p>De wol van de Lavayette drogerballen komt van het Nieuw-Zeelandse merinoschaap. Deze speciale wol heeft talloze voordelen en leent zich perfect uit voor de duurzame droogballen. De drogerballen beschikken over een hoogwaardige kwaliteit en gaan langdurig mee. De schapenwol wordt daarnaast op een diervriendelijke en verantwoorde manier verkregen. Voor een extra frisse was kun je eventueel een paar druppels essentiële olie toevoegen op de wasdrogerballen.<\/p>",
+        "button_text": "",
+        "link": "",
+        "layout": "left",
+        "text_align": "left",
+        "m_center": false,
+        "color_scheme": "cs3",
+        "section_padding": "both"
+      }
+    },
+    "f24879a7-1f13-4ed3-b5b3-56d5c5034c3f": {
+      "type": "key-features",
+      "blocks": {
+        "template--20317368615236__f24879a7-1f13-4ed3-b5b3-56d5c5034c3f-text_block-1": {
+          "type": "text_block",
+          "settings": {
+            "icon": "shipping",
+            "image": "shopify:\/\/shop_images\/laundry-min.png",
+            "link": "",
+            "rich_text": "<p><strong>Langdurige Geuren<\/strong><br\/>Behoud de frisheid van je was<\/p>",
+            "link_text": "Button"
+          }
+        },
+        "template--20317368615236__f24879a7-1f13-4ed3-b5b3-56d5c5034c3f-text_block-2": {
+          "type": "text_block",
+          "settings": {
+            "icon": "heart",
+            "image": "shopify:\/\/shop_images\/textile-min.png",
+            "link": "",
+            "rich_text": "<p><strong>Geen vlekken of verstoppingen meer<\/strong><br\/>Verleng de levensduur van je kleding en wasmachine<\/p>",
+            "link_text": "Button"
+          }
+        },
+        "template--20317368615236__f24879a7-1f13-4ed3-b5b3-56d5c5034c3f-text_block-3": {
+          "type": "text_block",
+          "settings": {
+            "icon": "nature",
+            "image": "shopify:\/\/shop_images\/wash-min.png",
+            "link": "",
+            "rich_text": "<p><strong>Een uitgebreide selectie van geuren<\/strong><br\/>Pas de geur van je was aan je stemming aan<\/p>",
+            "link_text": "Button"
+          }
+        },
+        "790935b8-b972-435d-a869-b6b79b4584be": {
+          "type": "text_block",
+          "settings": {
+            "icon": "world",
+            "image": "shopify:\/\/shop_images\/fashion-min.png",
+            "link": "",
+            "rich_text": "<p><strong>Veelzijdigheid<\/strong><br\/>Gebruik het zowel in de machine als bij de handwas<\/p>",
+            "link_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "template--20317368615236__f24879a7-1f13-4ed3-b5b3-56d5c5034c3f-text_block-1",
+        "template--20317368615236__f24879a7-1f13-4ed3-b5b3-56d5c5034c3f-text_block-2",
+        "template--20317368615236__f24879a7-1f13-4ed3-b5b3-56d5c5034c3f-text_block-3",
+        "790935b8-b972-435d-a869-b6b79b4584be"
+      ],
+      "custom_css": [
+        "@media only screen and (min-width: 600px) {.row {padding-top: 40px; padding-bottom: 50px; }}",
+        ".section-title {padding-top: 0px;}"
+      ],
+      "settings": {
+        "section_padding": "both",
+        "color_scheme": "cs1"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "products_per_row": 4,
+        "products_shown": 4,
+        "product_recommendations_heading": "Wellicht vind je dit ook interessant",
+        "section_padding": "both"
+      }
+    },
+    "17021386119a6bbb18": {
+      "type": "apps",
+      "blocks": {
+        "3ad82936-8411-4f9e-ba53-5eebd1160b00": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "animation": true,
+            "tags_exclude": "",
+            "tags_include": "",
+            "search": "",
+            "linkify": true,
+            "use_metafields": false,
+            "sku_tagtype": "sku"
+          }
+        }
+      },
+      "block_order": [
+        "3ad82936-8411-4f9e-ba53-5eebd1160b00"
+      ],
+      "settings": {
+        "full_width": false,
+        "section_padding": "both"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "9464c866-87b0-4525-9d35-028a740d6aa7",
+    "main-product-content",
+    "169658063215eeafae",
+    "69f3c94b-597d-49bf-a0e6-88f507cc63cb",
+    "30a75a32-408b-466f-bed6-933caa2ba864",
+    "d9363df0-9127-4827-9415-6c8d6c26c4dd",
+    "c09ce69e-4fef-4ad6-88bf-7fb07d50181c",
+    "f24879a7-1f13-4ed3-b5b3-56d5c5034c3f",
+    "product-recommendations",
+    "17021386119a6bbb18"
+  ]
 }
